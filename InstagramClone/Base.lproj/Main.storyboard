@@ -106,11 +106,57 @@
                     <connections>
                         <outlet property="password" destination="cGN-PY-hK7" id="xBL-WR-5bU"/>
                         <outlet property="username" destination="2Hk-4W-Ih9" id="7Go-q3-uZV"/>
+                        <segue destination="3cz-Hi-gIR" kind="show" identifier="login" id="52R-n2-P6l"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="304.5" y="372.5"/>
+            <point key="canvasLocation" x="-347.5" y="-23.5"/>
+        </scene>
+        <!--User List-->
+        <scene sceneID="iWh-ft-aiR">
+            <objects>
+                <tableViewController id="hmE-Ko-tmJ" customClass="TableViewController" customModule="InstagramClone" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="IZl-4V-OLz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="ad2-OD-Xla">
+                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ad2-OD-Xla" id="Tnk-m6-qNh">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="hmE-Ko-tmJ" id="1iT-PO-4D7"/>
+                            <outlet property="delegate" destination="hmE-Ko-tmJ" id="fvf-AV-bkI"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="User List" id="Ip6-WC-eM7"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iDJ-6U-jXV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="977.5" y="-23.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="LMr-Ym-suG">
+            <objects>
+                <navigationController id="3cz-Hi-gIR" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="hY9-7e-kek">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="hmE-Ko-tmJ" kind="relationship" relationship="rootViewController" id="ec6-jh-Yw0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qWE-Wd-syt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="324.5" y="-23.5"/>
         </scene>
     </scenes>
 </document>

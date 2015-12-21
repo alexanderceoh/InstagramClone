@@ -54,6 +54,8 @@ class ViewController: UIViewController {
                     // signup successful
                     print("Log in successful")
                     
+                    self.performSegueWithIdentifier("login", sender: self)
+                    
                 } else {
                     
                     if let errorString = error?.userInfo["error"] as? String {
@@ -70,14 +72,18 @@ class ViewController: UIViewController {
         
     }
     
-    
-    
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        
+        if PFUser.currentUser() != nil {
+            
+            self.performSegueWithIdentifier("login", sender: self)
+            
+        }
         
     }
     
@@ -108,6 +114,8 @@ class ViewController: UIViewController {
             if error == nil {
                 
                 // signup successful
+                
+                self.performSegueWithIdentifier("login", sender: self)
                 
             } else {
                 
