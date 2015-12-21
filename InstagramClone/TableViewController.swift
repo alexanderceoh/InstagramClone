@@ -15,10 +15,13 @@ class TableViewController: UITableViewController {
     var userids: [String] = []
     var isFollowing: [String:Bool] = [:]
     
+    var refresher: UIRefreshControl!
     
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    func refresh() {
+        
+        usernames = []
+        userids = []
+        isFollowing = [:]
         
         var query = PFUser.query()
         
@@ -31,7 +34,7 @@ class TableViewController: UITableViewController {
                     if let user = object as? PFUser {
                         
                         if user.objectId != PFUser.currentUser()?.objectId {
-                        
+                            
                             self.usernames.append(user.username!)
                             self.userids.append(user.objectId!)
                             
@@ -52,8 +55,12 @@ class TableViewController: UITableViewController {
                                     }
                                     
                                 }
+                                
+                               
                                 if self.isFollowing.count == self.usernames.count {
                                     self.tableView.reloadData()
+                                    self.refresher.endRefreshing()
+
                                 }
                             })
                         }
@@ -66,6 +73,20 @@ class TableViewController: UITableViewController {
             
             
         })
+        
+        
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        refresher = UIRefreshControl()
+        refresher.attributedTitle = NSAttributedString(string: "Pull to Refresh")
+        refresher.addTarget(self, action: "refresh", forControlEvents: .ValueChanged)
+        self.tableView.addSubview(refresher)
+        self.tableView.sendSubviewToBack(refresher)
+        
+        refresh()
         
     }
 
