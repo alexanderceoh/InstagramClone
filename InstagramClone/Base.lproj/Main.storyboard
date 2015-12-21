@@ -114,6 +114,70 @@
             </objects>
             <point key="canvasLocation" x="-347.5" y="-23.5"/>
         </scene>
+        <!--Your Feed-->
+        <scene sceneID="f5j-xq-1nc">
+            <objects>
+                <tableViewController title="Your Feed" id="PP5-Ri-3dk" customClass="FeedTableViewController" customModule="InstagramClone" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="321" sectionHeaderHeight="28" sectionFooterHeight="28" id="2KW-2h-JJ3">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="321" id="2f1-2L-EWu" customClass="TableViewCell" customModule="InstagramClone" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="321"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2f1-2L-EWu" id="8Om-wM-To3">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="320.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RYc-gf-7iK">
+                                            <rect key="frame" x="43" y="0.0" width="289" height="231"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tDC-Qv-l8B">
+                                            <rect key="frame" x="0.0" y="287.5" width="375" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bW4-4s-uQD">
+                                            <rect key="frame" x="0.0" y="245" width="375" height="27.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="tDC-Qv-l8B" secondAttribute="trailing" id="6Ts-ZE-gDp"/>
+                                        <constraint firstItem="RYc-gf-7iK" firstAttribute="leading" secondItem="8Om-wM-To3" secondAttribute="leadingMargin" constant="35" id="Bb9-Ic-zJ0"/>
+                                        <constraint firstAttribute="trailing" secondItem="bW4-4s-uQD" secondAttribute="trailing" id="F2e-cA-ajQ"/>
+                                        <constraint firstAttribute="bottom" secondItem="tDC-Qv-l8B" secondAttribute="bottom" constant="12.5" id="Pn5-8y-GXk"/>
+                                        <constraint firstItem="RYc-gf-7iK" firstAttribute="top" secondItem="8Om-wM-To3" secondAttribute="topMargin" constant="-8" id="ZYx-Hc-asj"/>
+                                        <constraint firstItem="tDC-Qv-l8B" firstAttribute="top" secondItem="bW4-4s-uQD" secondAttribute="bottom" constant="15" id="ld3-S3-08Y"/>
+                                        <constraint firstItem="bW4-4s-uQD" firstAttribute="leading" secondItem="8Om-wM-To3" secondAttribute="leading" id="m9Y-Qo-MEC"/>
+                                        <constraint firstItem="bW4-4s-uQD" firstAttribute="top" secondItem="RYc-gf-7iK" secondAttribute="bottom" constant="20" id="ne5-BT-9a8"/>
+                                        <constraint firstItem="bW4-4s-uQD" firstAttribute="top" secondItem="RYc-gf-7iK" secondAttribute="bottom" constant="20" id="qi6-4G-Ufv"/>
+                                        <constraint firstItem="tDC-Qv-l8B" firstAttribute="leading" secondItem="8Om-wM-To3" secondAttribute="leading" id="u8m-fb-o8w"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="RYc-gf-7iK" secondAttribute="trailing" constant="35" id="vQq-JP-IYj"/>
+                                        <constraint firstItem="tDC-Qv-l8B" firstAttribute="top" secondItem="bW4-4s-uQD" secondAttribute="bottom" constant="15" id="wMK-uy-Ief"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="message" destination="tDC-Qv-l8B" id="UtX-ST-444"/>
+                                    <outlet property="postedImage" destination="RYc-gf-7iK" id="J6m-RJ-ffL"/>
+                                    <outlet property="username" destination="bW4-4s-uQD" id="lHo-Fl-ws1"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="PP5-Ri-3dk" id="GpY-Nu-SjC"/>
+                            <outlet property="delegate" destination="PP5-Ri-3dk" id="djy-TV-mP6"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NkQ-UR-hTk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1020.5" y="-1004.5"/>
+        </scene>
         <!--User List-->
         <scene sceneID="iWh-ft-aiR">
             <objects>
@@ -139,6 +203,11 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="User List" id="Ip6-WC-eM7">
+                        <barButtonItem key="leftBarButtonItem" title="Feed" id="W4y-n4-e1g">
+                            <connections>
+                                <segue destination="PP5-Ri-3dk" kind="show" id="GVq-lx-Aks"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Post" id="OKA-T0-Xhk">
                             <connections>
                                 <segue destination="qtw-wH-zWi" kind="show" id="F4p-df-yvX"/>
